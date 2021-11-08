@@ -52,10 +52,6 @@ Kafka instance metrics.
     ```bash
     oc create -f prometheus.yaml
     ```
-1. Create a Service for the Prometheus instance:
-    ```bash
-    oc create -f service.yaml
-    ```
 1. Deploy the Datadog Agent:
     ```bash
     export DD_API_KEY="your api key goes here"
