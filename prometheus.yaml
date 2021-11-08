@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: openshift-streams
+spec:
+  serviceAccountName: prometheus-k8s
+  serviceMonitorSelector: {}
+  probeSelector: {}
+  podMetadata:
+    annotations:
+      ad.datadoghq.com/prometheus.check_names: |
+        ["openmetrics"]
+      ad.datadoghq.com/prometheus.init_configs: |
+        [{}]
+      ad.datadoghq.com/prometheus.instances: |
+        [
+          {
+            "prometheus_url": "http://prometheus-operated:9090/federate?match[]=%7Bjob%3D%22kafka-federate%22%7D",
+            "namespace": "rhosak",
+            "metrics": [ {"*": "*"}],
+            "type_overrides": { "*": "gauge" }
+          }
+        ]  
+  podMonitorSelector: {}
+  additionalScrapeConfigs:
+    key: kafka-federate.yaml
+    name: additional-scrape-configs
+  replicas: 1
+  ruleSelector: {}

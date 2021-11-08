@@ -1,0 +1,9 @@
+- job_name: "kafka-federate"
+  static_configs:
+  - targets: ["api.openshift.com"]
+  scheme: "https"
+  metrics_path: "/api/kafkas_mgmt/v1/kafkas/<replace-this-with-your-kafka-id>/metrics/federate"
+  oauth2:
+    client_id: "<replace-this-with-client-id>"
+    client_secret: "<replace-this-with-client-secret>"
+    token_url: "https://identity.api.openshift.com/auth/realms/rhoas/protocol/openid-connect/token"
