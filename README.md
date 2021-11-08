@@ -34,8 +34,6 @@ Kafka instance metrics.
 1. Edit the `metrics_path` URL in the *kafka-federate.yaml* file to contain the ID of your OpenShift Streams for Apache Kafka instance.
 ![](/images/kafka-instance-id.png)
 1. Edit the `client_id` and `client_secret` in the *kafka-federate.yaml* file to contain valid Service Account credentials for your Kafka instance.
-1. Click the dropdown in the top-right of the OpenShift cluster console and use the **Copy login command** link.
-1. Paste the login command into a terminal session.
 
 ## Setup
 
@@ -53,10 +51,6 @@ Kafka instance metrics.
 1. Next, create a Prometheus instance annotated for Datadog scraping:
     ```bash
     oc create -f prometheus.yaml
-    ```
-1. Create a Service for the Prometheus instance:
-    ```bash
-    oc create -f service.yaml
     ```
 1. Deploy the Datadog Agent:
     ```bash
