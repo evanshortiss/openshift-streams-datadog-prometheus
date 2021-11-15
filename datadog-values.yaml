@@ -22,7 +22,7 @@ datadog:
   ## * Must start with a letter.
   ## * Must end with a number or a letter.
   ## * Overall length should not be higher than 80 characters.
-  clusterName:  cloud-svc-tmm
+  clusterName:  cluster-name
 
   ## Set to 'datadoghq.eu' to send data to the EU site.
   site:  datadoghq.com
