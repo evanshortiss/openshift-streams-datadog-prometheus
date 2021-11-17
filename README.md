@@ -6,6 +6,8 @@ is then used to forward the captured metrics to Datadog for further analysis.
 
 _NOTE: This setup uses a close to default **datadog-values.yaml** file. The Kube TLS verify is disabled, and Prometheus scraping is enabled. Review and edit this file to suit your own needs._
 
+![](/architecture.png)
+
 ## Pre-requisites
 
 * [OpenShift Streams for Apache Kafka instance ID and Service Account](https://console.redhat.com/application-services/streams/kafkas)
