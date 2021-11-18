@@ -15,7 +15,7 @@ spec:
       ad.datadoghq.com/prometheus.instances: |
         [
           {
-            "prometheus_url": "http://prometheus-openshift-streams-0:9090/federate?match[]=%7Bjob%3D%22kafka-federate%22%7D",
+            "prometheus_url": "http://prometheus-operated:9090/federate?match[]=%7Bjob%3D%22kafka-federate%22%7D",
             "namespace": "rhosak",
             "metrics": [ {"*": "*"}],
             "type_overrides": { "*": "gauge" }
